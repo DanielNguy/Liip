@@ -165,41 +165,47 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Contact">
         <div class="my-auto">
             <h2 class="mb-5">Contact</h2>
+            <form id=\"contact-form\" method=\"post\" action=\"index.php\" role=\"form\">
+                <div class=\"controls\">
+<?php if (isset ($_SESSION['Login']) && ($_SESSION['Login'])){
 
-            <form id="contact-form" method="post" action="index.php" role="form">
-                <div class="controls">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_name">Vorname</label>
-                                <input id="form_name" type="text" pattern="[a-zA-Z]*" name="vorname"
-                                       class="form-control" placeholder="Vorname"
-                                       required="required" data-error="Der Vorname wird benötigt">
-                                <div class="help-block with-errors"></div>
+}
+
+else{echo "
+            
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_name\">Vorname</label>
+                                <input id=\"form_name\" type=\"text\" pattern=\"[a-zA-Z]*\" name=\"vorname\"
+                                       class=\"form-control\" placeholder=\"Vorname\"
+                                       required=\"required\" data-error=\"Der Vorname wird benötigt\">
+                                <div class=\"help-block with-errors\"></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_lastname">Nachname</label>
-                                <input id="form_lastname" type="text" pattern="[a-zA-Z]*" name="nachname"
-                                       class="form-control"
-                                       placeholder="Nachname" required="required"
-                                       data-error="Der Nachname wird benötigt">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_email">E-Mail</label>
-                                <input id="form_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                       name="email" class="form-control"
-                                       placeholder="E-Mail" required="required" data-error="Die E-Mail wird benötigt">
-                                <div class="help-block with-errors"></div>
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_lastname\">Nachname</label>
+                                <input id=\"form_lastname\" type=\"text\" pattern=\"[a-zA-Z]*\" name=\"nachname\"
+                                       class=\"form-control\"
+                                       placeholder=\"Nachname\" required=\"required\"
+                                       data-error=\"Der Nachname wird benötigt\">
+                                <div class=\"help-block with-errors\"></div>
                             </div>
                         </div>
                     </div>
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_email\">E-Mail</label>
+                                <input id=\"form_email\" type=\"email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$\"
+                                       name=\"email\" class=\"form-control\"
+                                       placeholder=\"E-Mail\" required=\"required\" data-error=\"Die E-Mail wird benötigt\">
+                                <div class=\"help-block with-errors\"></div>
+                            </div>
+                        </div>
+                    </div>";}
+                    ?>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

@@ -24,17 +24,14 @@
   </head>
 
   <body class="bg-dark">
-<?php
-$email = "SELECT * email from TLogindaten";
-?>
     <div class="container">
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-          <form action="processLogin.php">
+          <form action="processLogin.php" method="post">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" onkeyup="checklogin()" placeholder="Email address" required="required" autofocus="autofocus">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
               </div>
             </div>
             <div class="form-group">
@@ -62,7 +59,8 @@ $email = "SELECT * email from TLogindaten";
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript--><!--
+    <script src="checklogin.js"></script>-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

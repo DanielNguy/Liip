@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3("../Logindaten.db");
+$db = new SQLite3("Logindaten.db");
 $res = $db->query("SELECT * FROM TLogindaten");
 /* Abfrageergebnis ausgeben */
 while ($dsatz = $res->fetchArray(SQLITE3_ASSOC)) {

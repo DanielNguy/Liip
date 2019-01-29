@@ -10,17 +10,20 @@ session_start();
 
 $db = new SQLite3("Logindaten.db");
 
-$email = $_POST['inputEmail'];
-$password = $_POST['password'];
-$emailcheck = $db->query("SELECT * email from TLogindaten where email = $email && password = $password");
-while ($row = $emailcheck->fetchArray()){
-    var_dump($row);
+$email = $_POST["inputEmail"];
+$password = $_POST["inputPassword"];
+
+$query ="SELECT * from TLogindaten where email = '$email' and password = '$password'";
+$result = $db->query($query);
+
+$matchingRecords = $result->fetchArray(SQLITE3_ASSOC);
+
+if ($matchingRecords){
+    $_SESSION['email'] = $email;
+    $_SESSION['Login'] = true;
+    header("Location: index.php");
+}else{
+    echo "Invalid Login Credentials.";
 }
-
-
-$Vorname = $_POST['firstName'];
-$Nachname = $_POST['lastName'];
-$_SESSION['Login'] = true;
-header("Location: index.html");
 ?>
 

@@ -31,12 +31,12 @@
           <form action="processLogin.php" method="post">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                <input type="email" id="inputEmail" name="inputEmail"class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required="required">
               </div>
             </div>
             <div class="form-group">

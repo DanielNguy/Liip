@@ -1,3 +1,8 @@
+<?php
+session_start();
+var_dump($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,9 +60,16 @@
                 <a class="nav-link js-scroll-trigger" href="#Weather">Weather</a>
 
             </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="login.php">Log-in</a>
-            </li>
+            <?php if (isset ($_SESSION['Login']) && ($_SESSION['Login'])){
+                echo "<li class=\"nav-item\">
+                <a class=\"nav-link js-scroll-trigger\" href=\"logout.php\">Log-out</a>
+            </li>";
+            }
+            else {
+                echo "<li class=\"nav-item\">
+                <a class=\"nav-link js-scroll-trigger\" href=\"login.php\">Log-in</a>
+            </li>";
+} ?>
         </ul>
     </div>
 </nav>
@@ -168,8 +180,36 @@
             <form id=\"contact-form\" method=\"post\" action=\"index.php\" role=\"form\">
                 <div class=\"controls\">
 <?php if (isset ($_SESSION['Login']) && ($_SESSION['Login'])){
+    echo "
+            
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_name\">Vorname</label>
+                                <input id=\"form_name\" type=\"text\" pattern=\"[a-zA-Z]*\" name=\"vorname\"
+                                       class=\"form-control\" placeholder=\"Vorname\"
+                                       required=\"required\" data-error=\"Der Vorname wird benötigt\">
+                                <div class=\"help-block with-errors\"></div>
+                            </div>
+                        </div>
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_lastname\">Nachname</label>
+                                <label>".$_SESSION['vorname']."</label>
+                                <div class=\"help-block with-errors\"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"row\">
+                        <div class=\"col-md-6\">
+                            <div class=\"form-group\">
+                                <label for=\"form_email\">E-Mail:</label><br>
+                                <label>".$_SESSION['email']."</label>
+                                <div class=\"help-block with-errors\"></div>
+                            </div>
+                        </div>
+                    </div>";}
 
-}
 
 else{echo "
             

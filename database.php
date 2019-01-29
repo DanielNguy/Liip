@@ -22,5 +22,5 @@ $db->query("INSERT INTO TLogindaten (id, vorname, nachname, email, password) VAL
 
 $db->close();
 
-header('Location: login.html');
+header('Location: login.php');
 

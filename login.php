@@ -24,7 +24,9 @@
   </head>
 
   <body class="bg-dark">
-
+<?php
+$email = "SELECT * email from TLogindaten";
+?>
     <div class="container">
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
@@ -32,7 +34,7 @@
           <form action="processLogin.php">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" onkeyup="" placeholder="Email address" required="required" autofocus="autofocus">
+                <input type="email" id="inputEmail" class="form-control" onkeyup="checklogin()" placeholder="Email address" required="required" autofocus="autofocus">
               </div>
             </div>
             <div class="form-group">
@@ -48,7 +50,7 @@
                 </label>
               </div>
             </div>
-            <input type="submit" value="Register" id="registerbutton">
+            <input type="submit" value="Login" id="loginbutton">
 
           </form>
           <div class="text-center">

@@ -36,6 +36,8 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
 
 }
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
+var today  = new Date();
 
 function renderWeather(data) {
     return `<div class="my-auto">
@@ -43,7 +45,7 @@ function renderWeather(data) {
         <h3 class="mb-0">${data.name}</h3>
         <div class="report-container">
             <div class="time">
-                <div>${new Date()}</div>
+                <div>${(today.toLocaleDateString("de-CH", options))}</div>
                 <div>${data.weather[0].description}</div>
             </div>
             <div class="weather-forecast">

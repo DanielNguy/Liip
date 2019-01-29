@@ -27,6 +27,8 @@
 
 <body id="page-top">
 
+<div id="temperature"></div>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Daniel Nguy</span>
@@ -51,12 +53,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#Weather">Weather</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+
             </li>
         </ul>
     </div>
@@ -90,7 +87,8 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="CV">
         <div class="my-auto">
-            <h2 class="mb-5">CV - curriculum vitae</h2><a href="/download/Lebenslauf_Daniel.doc" download class="text-md-right">Download</a>
+            <h2 class="mb-5">CV - curriculum vitae</h2><a href="/download/Lebenslauf_Daniel.doc" download
+                                                          class="text-md-right">Download</a>
             <h2 class="mb-5">Personal Information</h2>
             <div class="text-md-left">
                 <p>Daniel Nguy
@@ -118,7 +116,7 @@
             <div class="subheading mb-3">Ricky Nguy (Brother 20y.)</div>
             <p>Polygraph in education, Maxsolution GmbH</p>
 
-<br>
+            <br>
             <h2 class="mb-5">School</h2>
             <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
@@ -171,7 +169,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="form_name">Vorname</label>
-                                <input id="form_name" type="text" pattern="[a-zA-Z]*" name="vorname" class="form-control" placeholder="Vorname"
+                                <input id="form_name" type="text" pattern="[a-zA-Z]*" name="vorname"
+                                       class="form-control" placeholder="Vorname"
                                        required="required" data-error="Der Vorname wird benötigt">
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -179,8 +178,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="form_lastname">Nachname</label>
-                                <input id="form_lastname" type="text" pattern="[a-zA-Z]*" name="nachname" class="form-control"
-                                       placeholder="Nachname" required="required" data-error="Der Nachname wird benötigt">
+                                <input id="form_lastname" type="text" pattern="[a-zA-Z]*" name="nachname"
+                                       class="form-control"
+                                       placeholder="Nachname" required="required"
+                                       data-error="Der Nachname wird benötigt">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -189,7 +190,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="form_email">E-Mail</label>
-                                <input id="form_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="form-control"
+                                <input id="form_email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                       name="email" class="form-control"
                                        placeholder="E-Mail" required="required" data-error="Die E-Mail wird benötigt">
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -199,13 +201,16 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="form_message">Nachricht</label>
-                                <textarea id="form_message" name="nachricht" class="form-control" placeholder="Nachricht"
-                                          rows="4" maxlength="255" required="required" data-error="Geben Sie eine Nachricht ein"></textarea>
+                                <textarea id="form_message" name="nachricht" class="form-control"
+                                          placeholder="Nachricht"
+                                          rows="4" maxlength="255" required="required"
+                                          data-error="Geben Sie eine Nachricht ein"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-success btn-send btn-bottom" value="Abschicken" name="Abschicken" id="Abschicken">
+                            <input type="submit" class="btn btn-success btn-send btn-bottom" value="Abschicken"
+                                   name="Abschicken" id="Abschicken">
                         </div>
                     </div>
                 </div>
@@ -217,101 +222,21 @@
         </main>
 
     </section>
-        <?php
-        function sendmail() {
+    <?php include 'sendmail.php';?>
 
-            $empfaenger = "daniel.nguy@stud.kftg.ch";
-            $nachname = $_POST['nachname'];
-            $vorname = $_POST['vorname'];
-            $from = $_POST['email'];
-            $text = $_POST['nachricht'];
-            $msg = wordwrap($text, 70);
-            mail($empfaenger, $msg, $from);
+</div>
 
 
-        }
-        function sendenerfolgreich() {
-            exit();
-        }
-        if (array_key_exists('Abschicken', $_POST)) {
-            sendmail();
-            echo '<script type="text/javascript">';
-            echo 'document.getElementById("sendsuccess").style.display = "block";';
-            echo '</script>';
-        }
-        ?>
+<hr class="m-0">
 
-        </div>
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Weather"></section>
 
+<hr class="m-0">
 
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Weather">
-        <div class="my-auto">
-            <h2 class="mb-5">Weather</h2>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <div class="my-auto">
-            <h2 class="mb-5">Interests</h2>
-            <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid
-                skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free
-                climbing, and kayaking.</p>
-            <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
-                shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology
-                advancements in the front-end web development world.</p>
-        </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-            <h2 class="mb-5">Awards &amp; Certifications</h2>
-            <ul class="fa-ul mb-0">
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    Google Analytics Certified Developer
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    Mobile Web Specialist - Google Certification
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    2<sup>nd</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - James Buchanan High School - Hackathon 2006
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    3<sup>rd</sup>
-                    Place - James Buchanan High School - Hackathon 2005
-                </li>
-            </ul>
-        </div>
-    </section>
 
 </div>
 
 <!-- Bootstrap core JavaScript -->
-
 <script src="geolocation.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

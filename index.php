@@ -55,6 +55,9 @@
                 <a class="nav-link js-scroll-trigger" href="#Weather">Weather</a>
 
             </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="login.html">Log-in</a>
+            </li>
         </ul>
     </div>
 </nav>
